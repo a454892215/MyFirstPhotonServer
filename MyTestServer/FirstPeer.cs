@@ -1,4 +1,6 @@
-﻿using Photon.SocketServer;
+﻿using System;
+using System.Collections.Generic;
+using Photon.SocketServer;
 using PhotonHostRuntimeInterfaces;
 
 namespace MyTestServer
@@ -14,6 +16,11 @@ namespace MyTestServer
         {
             var obj = request.Parameters[3];
             LogUtil.I("接收到客户端的请求：" + obj + "  OperationCode:" + request.OperationCode);
+
+            var dictionary = new Dictionary<byte, Object> {{1, "我是来自服务器的消息 i am from server"}};
+            var response = new OperationResponse(1, dictionary);
+            SendOperationResponse(response, sendParameters);
+            LogUtil.I("===========服务端发送消息成功===========");
         }
 
         //客户端断开
