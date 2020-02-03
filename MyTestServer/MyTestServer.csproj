@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="AppServer.cs" />
     <Compile Include="FirstPeer.cs" />
+    <Compile Include="LogUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
